@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Fugles';
+    src: url('fonts/Fuggles-Regular.ttf') format('opentype');
+}
+
+:root{
+    --Fugles: Fugles, sans-serif;
+}
+
+header > h5 {
+    font-family: var(--Fugles);
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.index-title{
+    font-family: var(--Fugles);
+    font-size: 100px;
+    font-weight: 700;
+}

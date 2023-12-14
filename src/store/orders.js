@@ -31,7 +31,7 @@ export const useOrdersStore = defineStore({
     async getMyOrdersDB() {
 			try {
         const userStore = useUserStore()
-				const response = await fetch(`http://daw.deei.fct.ualg.pt/~a12345/LAB11/api/orders.php?session_id=${userStore.getUser.session_id}`)
+				const response = await fetch(`http://daw.deei.fct.ualg.pt/~a75539/LAB11/api/orders.php?session_id=${userStore.getUser.session_id}`)
 				const data = await response.json()
         this.addOrders(data)
 			} 
@@ -42,7 +42,7 @@ export const useOrdersStore = defineStore({
     async addOrderDB(order) {
 			try {
         const userStore = useUserStore()
-				const response = await fetch(`http://daw.deei.fct.ualg.pt/~a12345/LAB11/api/orders.php?session_id=${userStore.getUser.session_id}`, {
+				const response = await fetch(`http://daw.deei.fct.ualg.pt/~a75539/LAB11/api/orders.php?session_id=${userStore.getUser.session_id}`, {
 					method: 'POST',
 					body: JSON.stringify(order),
 					headers: { 'Content-type': 'application/json; charset=UTF-8' },

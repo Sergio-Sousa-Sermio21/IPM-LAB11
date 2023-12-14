@@ -1,5 +1,5 @@
  
-  import { defineStore } from 'pinia'
+  import { defineStore } from 'pinia';
   export const useCategoriesStore = defineStore({
   id: 'categories',
   state: () => ( {
@@ -23,7 +23,7 @@
     },  
     async getCategoriesDB() {
             try {
-                const response = await fetch('http://daw.deei.fct.ualg.pt/~a12345/LAB11/api/categories.php')
+                const response = await fetch('http://daw.deei.fct.ualg.pt/~a75539/LAB11/api/categories.php')
                 const data = await response.json()
                 console.log('received data:', data)                
                 this.addCategories(data)

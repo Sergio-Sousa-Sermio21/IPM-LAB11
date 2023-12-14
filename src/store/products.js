@@ -1,4 +1,4 @@
-import { defineStore } from 'pinia'
+import { defineStore } from 'pinia';
 export const useProductsStore = defineStore({
   id: 'products',
   state: () => ( {
@@ -29,7 +29,7 @@ export const useProductsStore = defineStore({
     },    
     async getProductsDB() {
 			try {
-				const response = await fetch('http://daw.deei.fct.ualg.pt/~a12345/LAB11/api/products.php')
+				const response = await fetch('http://daw.deei.fct.ualg.pt/~a75539/LAB11/api/products.php')
 				const data = await response.json()
                 this.addProducts(data)
                 return true
