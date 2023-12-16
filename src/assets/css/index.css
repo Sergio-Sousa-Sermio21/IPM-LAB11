@@ -18,3 +18,9 @@ header > h5 {
     font-size: 100px;
     font-weight: 700;
 }
+
+body{
+    background-image: url('../images/main-background.png');
+    background-size: cover;
+    background-attachment: fixed;
+}

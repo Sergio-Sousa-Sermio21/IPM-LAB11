@@ -1,19 +1,9 @@
 <template>
 <div>
-
-
-  
-<Header />
-
-
-
-
-
-
-
-
-<Footer />
-
+	<Header />
+	<ul class="list-group">
+    	<li class="list-group-item">An item</li>
+  	</ul>
 </div>
 </template>
 

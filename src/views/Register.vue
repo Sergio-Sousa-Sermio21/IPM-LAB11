@@ -2,15 +2,16 @@
 <div>
 
 <Header />
-	<div v-if="!this.userStore.getUser.session_id" id="register-form" style="position:relative; margin-right:5%;margin-left:3%" class="container" >
-		<div class="main-title">
-			<h1 class="mainh">Register</h1>
-		</div>
+	<div v-if="!this.userStore.getUser.session_id" id="register-form" class="container" >
+		
 		<div v-if="error" class="alert alert-danger" style="margin-top: 30px;" role="alert">
 			{{msg}}
 		</div>
 		<div class="row g-3">
-			<form @submit.prevent="handleSubmit">
+			<form @submit.prevent="handleSubmit" style="margin-top:150px">
+			<div class="main-title">
+				<h1 class="mainh">Register</h1>
+			</div>
 			<div  class="col-12">
 				<label for="username" class="form-label">Name</label>
 				<div class="input-group has-validation">
@@ -40,7 +41,7 @@
 		</div>
 	</div>
 	<div v-else>
-		<h1 style="text-align: center;">Logout first</h1>
+		<h1 class="logout">Logout first</h1>
 	</div>
 </div>
 </template>
@@ -92,7 +93,7 @@ export default {
 				if (!await this.userStore.userExistsDB(this.user)) {
 					this.error= false;
 					await this.userStore.addUserDB()
-					this.$router.push('/message/4')
+					this.$router.push('/message/1')
 				}
 			}
 		},
@@ -122,4 +123,12 @@ export default {
 	background-size: 240px;
 	background-repeat: no-repeat;
 }
+.logout{
+	text-align: center;
+	background-image: url('@/assets/images/title-bg.png');
+	background-position: 50% 50%;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
 </style>
