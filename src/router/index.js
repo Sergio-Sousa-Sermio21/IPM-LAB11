@@ -1,11 +1,11 @@
+import Basket from '@/views/Basket.vue'
+import Home from '@/views/Home.vue'
+import Login from '@/views/Login.vue'
+import Menu from '@/views/Menu.vue'
+import Message from '@/views/Message.vue'
+import MyOrders from '@/views/MyOrders.vue'
+import Register from '@/views/Register.vue'
 import { createRouter, createWebHistory } from 'vue-router'
-import  Home from '@/views/Home.vue'
-import  Menu from '@/views/Menu.vue'
-import  Basket from '@/views/Basket.vue'
-import  Register from '@/views/Register.vue'
-import  Login from '@/views/Login.vue'
-import  MyOrders from '@/views/MyOrders.vue'
-import  Message from '@/views/Message.vue'
 
 
 
@@ -35,7 +35,7 @@ const routes = [
     component: MyOrders
   }, 
   {
-    path: '/message',
+    path: '/message/:id',
     component: Message
   },        
 ]

@@ -1,13 +1,18 @@
 <template>
 	<div>
-			<h1>{{message}}</h1>
+		<h1>{{message}}</h1>
 	</div>
 </template>
 
 <script>
+import Header from '@/components/Header.vue'
+import { useUserStore } from '@/store/user'
 
 export default {	
-
+	setup() {
+		const userStore = useUserStore()
+		return { userStore }
+  	},
 	data() {
 		return {
 			message: ''
@@ -16,8 +21,9 @@ export default {
 	mounted() {
 		this.setMessage()
 	},
-
-
+	components: {
+        Header
+	},
 	methods: {
 		setMessage() {
 				if (this.$route.params.id == 1) {
@@ -28,7 +34,10 @@ export default {
                 }
 				if (this.$route.params.id == 3) {
                 	this.message = `Bye ${this.userStore.user.name}, come back soon!`
-                }														
+                }
+				if (this.$route.params.id == 4){
+					this.message = `Thank you for your purchase!`
+				}												
 				
 				var timeleft = 2;
 				var downloadTimer = setInterval(() => {
@@ -47,8 +56,12 @@ export default {
 
 <style scoped>
 h1{
-	position: 50% 50%;
+	text-align: center;
 	background-image: url('@/assets/images/title-bg.png');
+	background-position: 50% 50%;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	background-repeat: no-repeat;
 }
 </style>
 

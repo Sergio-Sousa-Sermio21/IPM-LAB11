@@ -2,9 +2,9 @@
 	<Header />
 	<div id="shoppier-background" class="bg-image position-relative overflow-hidden p-5 text-center bg-light">
 		<div class="p-lg-5 mx-auto msy-3 bg-image p-5" id="note">
-			<h1 class="index-title" style="margin-top: 17px;">Notter</h1>
-			<p class="lead fw-normal">Your best stationary shop</p>
-			<div v-if="!this.userStore.getUser.session_id">
+			<h1 class="index-title" >Notter</h1>
+			<div v-if="!this.userStore.getUser.session_id" style="margin-top:30px">
+				<p class="lead fw-normal">Your best stationary shop</p>
 				<router-link class="btn btn-outline-dark mb-5" to="register">Start buying</router-link>
 			</div>
 		</div>
@@ -51,11 +51,11 @@ export default {
 	},
 	methods: {
 		addToCart(product){
-			this.basketStore.incrementProduct(product.id)
+			this.basketStore.incrementProduct(product.id, product.price);
 		},
 		async getProducts(){
-			await this.productsStore.getProductsDB()
-			this.products = this.productsStore.products
+			await this.productsStore.getProductsDB();
+			this.products = this.productsStore.products;
 		}
 	},
 	computed: {
@@ -67,10 +67,9 @@ export default {
 <style scoped>
 	#note{
 		background-image: url('@/assets/images/note.png');
-		background-position: 52% -28px; 
+		background-position: 52% -1px; 
 		background-size: contain;
 		background-repeat: no-repeat;
-		background-size: 416px;
 	}
 	#shoppier-background{
 		background-image: url('@/assets/images/notebook-bg.jpg');

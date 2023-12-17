@@ -17,7 +17,9 @@
 				</svg>
 				{{this.basketStore.getFullQuantity}}
 			</router-link>
-			<button @click="emptyBasket()" id="noCart">Empty Basket</button>
+			<button @click="emptyBasket()" class="button-link">Empty Basket</button>
+			<router-link v-if="this.userStore.getUser.session_id" class="p-2 text-dark" to="myorders">My Orders</router-link>
+			<button @click="logoutUser()" v-if="this.userStore.getUser.session_id" class="button-link">Logout</button>
 		</nav>
 		<router-link v-if="!this.userStore.getUser.session_id" class="btn btn-outline-dark" to="register">Sign up</router-link>
 	</div>
@@ -37,6 +39,10 @@ export default {
     methods: {	
 		emptyBasket(){
 			this.basketStore.clearBasket();
+		},
+		logoutUser(){
+			this.userStore.logoutUserDB(this.userStore.getUser.session_id)
+			this.$router.push('/message/3')
 		}
     },
     computed: {
@@ -63,7 +69,7 @@ h5 {
     font-size: 50px;
     font-weight: 700;
 }
-#noCart{
+.button-link{
 	background: none!important;
   	border: none;
 	margin-right:5px;
