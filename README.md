@@ -1,6 +1,6 @@
-# LAB11 vue3-app skeleton
+# LAB11 for IPM
 
-This template should help get you started developing with Vue 3 in Vite.
+An vue app Project for University
 
 ## Recommended IDE Setup
 
@@ -33,16 +33,10 @@ npm run dev
 nano vite.config.js
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/~a12345/LAB11/dist/',
+  base: 'LAB11/dist/',
 })
 
 npm run build
-```
-Note: Replace "12345" with your student number
-
-### Open project in browser at URL
-```
-http://daw.deei.fct.ualg.pt/~a12345/LAB11/dist/
 ```
 
 ### Lint with [ESLint](https://eslint.org/)
